@@ -1,0 +1,13 @@
+.conversation-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: scroll;
+    height: 100%;
+    align-items: flex-start;
+    gap: 36px;
+
+    .chat-baloon {
+        width: 100%;
+    }
+}

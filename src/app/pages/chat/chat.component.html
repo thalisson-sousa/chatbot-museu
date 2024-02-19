@@ -9,7 +9,12 @@
             <span>• Online</span>
         </div>
     </header>
-    <section>
-        <app-chat-sugestions></app-chat-sugestions>
+    <section class="chat">
+        <app-chat-sugestions 
+            (questionSelected)="sendSuggestedQuestion($event)"
+                *ngIf="questions.length < 1"
+            >
+        </app-chat-sugestions>
+        <chat-dialog [messages]="questions"></chat-dialog>
     </section>
 </main>
