@@ -1,0 +1,39 @@
+.suggestion-wrapper, .suggestion-topic, .suggestion-header, .suggestion-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.suggestion-wrapper {
+    gap: 36px;
+
+  .suggestion-topic {
+    width: 100%;
+    gap: 18px;
+
+    span {
+        font-size: 14px;
+        color: var(--text-secundary);
+        font-weight: bold;
+    }
+
+    .suggestion-list {
+        list-style: none;
+        width: 100%;
+        gap: 8px;
+
+        li {
+            width: 90%;
+            max-width: 320px;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secundary);
+            background-color: var(--bg-secundary);
+            cursor: pointer;
+        }
+    }
+  }
+}
