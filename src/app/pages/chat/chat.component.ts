@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 import { ArrowLeftComponent } from '../../icons/arrow-left/arrow-left.component';
 import { MuseumComponent } from '../../icons/museum/museum.component';
 import { ChatSugestionsComponent } from '../../components/chat-sugestions/chat-sugestions.component';
@@ -24,10 +24,14 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   templateUrl: './chat.component.html',
   styleUrl: './chat.component.scss'
 })
-export class ChatComponent {
+export class ChatComponent implements AfterViewInit {
   questions: Message[] = JSON.parse(localStorage.getItem("messeges") ?? "[]")
 
   constructor(private service: MessageService) {}
+
+  ngAfterViewInit(): void {
+    this.questions = JSON.parse(localStorage.getItem("question") ?? "[]")
+  }
 
   updateLocalStorage() {
     localStorage.setItem("message", JSON.stringify(this.questions))
